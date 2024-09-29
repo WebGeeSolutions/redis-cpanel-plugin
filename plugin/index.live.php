@@ -92,11 +92,13 @@ try {
         echo "<pre>";
         echo "<br>";
         if ($status_info['status'] == 'Running') {
-            echo "Debugging Area: For Admin Only...";
+            echo "Redis Manager Logs:";
             echo "<br>";
             echo "Running - " . "Port: " . $status_info['port'] . " | " . "Password: " . $status_info['password']  . " | " . "User: " . $status_info['user'];
         } else {
-            echo "Debugging Area: For Admin Only...";
+            echo "Redis Manager Logs:";
+            echo "<br>";
+            echo "Redis is not running";
         }
         echo "<br>";
         echo "<br>";
@@ -109,7 +111,7 @@ try {
             <div class="panel-body">
                 <div class="header-section">
                     <img src="./redis_icon.webp" alt="Redis" width="50" />
-                    <h4>Configuration:</h4>
+                    <h4>Configuration</h4>
                 </div>
                 <div class="status-section">
                     <?php if ($status_info['status'] == 'Running') : ?>
@@ -135,9 +137,6 @@ try {
                 </div>
                 <hr>
                 <form method="get" class="form-inline">
-                    <span class="developed-by">
-                        Developed by <a href="https://www.linkedin.com/in/atikrahmanbd/" target="_blank"><strong>Atik Rahman</strong></a> with help from <a href="https://www.openai.com/chatgpt" target="_blank">ChatGPT</a>
-                    </span>
                     <input type="hidden" name="action" value="<?= $status_info['status'] == 'Running' ? 'stop' : 'start' ?>">
                     <button class="btn <?= $status_info['status'] == 'Running' ? 'btn-danger' : 'btn-success' ?>" type="submit"><?= $status_info['status'] == 'Running' ? 'Stop Redis' : 'Start Redis' ?></button>
                 </form>

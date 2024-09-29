@@ -64,7 +64,7 @@ create_redis_config() {
                 echo "port $PORT"
                 echo "requirepass $PASSWORD"
                 echo "dir $USER_REDIS_DIR"
-                echo "maxmemory 256mb"
+                echo "maxmemory 1gb"
                 echo "databases 16"
             } >> $config_file
         else

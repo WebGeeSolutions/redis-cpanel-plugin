@@ -105,7 +105,7 @@ class RedisManager
                 "requirepass $password",
                 "dir {$this->userRedisDir}",
                 "pidfile {$this->pidFile}",
-                "maxmemory 256mb",
+                "maxmemory 1gb",
                 "databases 16",
             ];
 
